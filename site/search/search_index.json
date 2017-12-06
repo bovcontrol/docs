@@ -1,0 +1,239 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Introduction\n\n\nWelcome to the official documentation of the Internet Of Cows API from BovControl.\n\n\nThis API is divided into two parts: WearableAPI and ObserverAPI.\n\n\nThe purpose of Wearable API is to track a single animal: one device -\n one animal.\n\n\nThe Observer API is the bulk version of WearableAPI: one device -\n one or more animals.\n\n\nWearableAPI\n\n\nThis API is dedicated to collect data from a single animal.\n\n\nThe device must be attached to an existing animal.\n\n\nThese API, as the name says, is great to build a device to be uses as a wearable.\n\n\nObserverAPI\n\n\nThese API, as the name says, is great to build a device to observe the current state of many animals.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#introduction", 
+            "text": "Welcome to the official documentation of the Internet Of Cows API from BovControl.  This API is divided into two parts: WearableAPI and ObserverAPI.  The purpose of Wearable API is to track a single animal: one device -  one animal.  The Observer API is the bulk version of WearableAPI: one device -  one or more animals.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/#wearableapi", 
+            "text": "This API is dedicated to collect data from a single animal.  The device must be attached to an existing animal.  These API, as the name says, is great to build a device to be uses as a wearable.", 
+            "title": "WearableAPI"
+        }, 
+        {
+            "location": "/#observerapi", 
+            "text": "These API, as the name says, is great to build a device to observe the current state of many animals.", 
+            "title": "ObserverAPI"
+        }, 
+        {
+            "location": "/_wearable-api/", 
+            "text": "WearableAPI\n\n\nWearable Post Data\n\n\nPost animal or alert data\n\n\n[POST] http://api.staging.bovcontrol.com/ioc/v1/wearable/data\n\n\n\n\n\n\n\n\nParams\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nAccess token of device\n\n\n\n\n\n\ndata\n\n\nContent data to update animal and/or list of alerts\n\n\n\n\n\n\n\n\nExample:\n\n\n{\n  \ntoken\n : \nPErhl83UId\n,\n  \ndata\n: {\n    \nanimal\n: {\n        \ntemperature\n: \n37.5\n,\n        \nheart_rate\n: \n91\n,\n        \nmilk_production\n: \n16\n\n    },\n    \nalert\n : [\n            {\n                \ntype\n: \nerror\n,\n                \nmessage\n : \nYour message\n\n            },\n            {\n                \ntype\n: \nwarning\n,\n                \nmessage\n : \nAnother message\n\n            }\n        ]\n  }\n}", 
+            "title": "WearableAPI"
+        }, 
+        {
+            "location": "/_wearable-api/#wearableapi", 
+            "text": "", 
+            "title": "WearableAPI"
+        }, 
+        {
+            "location": "/_wearable-api/#wearable-post-data", 
+            "text": "Post animal or alert data  [POST] http://api.staging.bovcontrol.com/ioc/v1/wearable/data     Params  Description      token  Access token of device    data  Content data to update animal and/or list of alerts     Example:  {\n   token  :  PErhl83UId ,\n   data : {\n     animal : {\n         temperature :  37.5 ,\n         heart_rate :  91 ,\n         milk_production :  16 \n    },\n     alert  : [\n            {\n                 type :  error ,\n                 message  :  Your message \n            },\n            {\n                 type :  warning ,\n                 message  :  Another message \n            }\n        ]\n  }\n}", 
+            "title": "Wearable Post Data"
+        }, 
+        {
+            "location": "/_observer-api/", 
+            "text": "ObserverAPI\n\n\nObserver Post Data\n\n\nPost data or alerts from one or more animals\n\n\n[POST] http://api.staging.bovcontrol.com/ioc/v1/observer/data\n\n\n\n\n\n\n\n\nParams\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nAccess token of device\n\n\n\n\n\n\ndata\n\n\nList of animal data (all animal entries must be followed by the animal ID) and/or list of alerts\n\n\n\n\n\n\n\n\n\n{\n    \ntoken\n : \njEjms9j3rf\n,\n    \ndata\n : {\n        \nanimal\n : {\n            \n001\n: {\n            \nweight\n: \n1120\n,\n            \nheart_rate\n : \n88\n\n            }\n        },\n        \nalert\n : [\n            {\n                \ntype\n: \nwarning\n,\n                \nmessage\n : \nYour message\n\n            }\n        ]\n    }\n}", 
+            "title": "ObserverAPI"
+        }, 
+        {
+            "location": "/_observer-api/#observerapi", 
+            "text": "", 
+            "title": "ObserverAPI"
+        }, 
+        {
+            "location": "/_observer-api/#observer-post-data", 
+            "text": "Post data or alerts from one or more animals  [POST] http://api.staging.bovcontrol.com/ioc/v1/observer/data     Params  Description      token  Access token of device    data  List of animal data (all animal entries must be followed by the animal ID) and/or list of alerts     \n{\n     token  :  jEjms9j3rf ,\n     data  : {\n         animal  : {\n             001 : {\n             weight :  1120 ,\n             heart_rate  :  88 \n            }\n        },\n         alert  : [\n            {\n                 type :  warning ,\n                 message  :  Your message \n            }\n        ]\n    }\n}", 
+            "title": "Observer Post Data"
+        }, 
+        {
+            "location": "/datatype/", 
+            "text": "Data types\n\n\nThe API supports the following data types:\n\n\nVariable |  Description | Unit | Example\n---------|--------| ----- | ------|\ntemperature | Animal corporal temperature | C | 37.4\nheart_rate | Heart rate | bpm | 80\nabnormal_motion | Detection of abnormal motion | BOOL | true\ngeo_lat | Animal spartial position - latitude | DECIMAL | 23.191919\ngeo_long | Animal spartial position - longitude | DECIMAL | -22.909090\nweight | Weight | kg | 450.3\nmilk_production | Animal's milk production | L | 10.5\ndescription | Open field for any comment | STRING | The animal is ready for sale\nsale_price | Sale Price | DECIMAL | 20000.00\nscrotal_circumference | Scrotal Circumference | cm | 50\nphysical_examination | Physical Examination | INT | 244 (\nreference\n)\nmedical_treatment | Medical treatment | INT |  255 (\nreference\n)\ndiagnostic_test | Diagnostic test | INT | 372 (\nreference\n)\nbreeding_information | Breeding information | INT | 250 (\nreference\n)\nvaccine | Vaccine | INT | 314 (\nreference\n)\nworming | Worming | INT | 294 (\nreference\n)\n\n\nReference tables\n\n\nPhysical Examination\n\n\n\n\n\n\n\n\nValue\n\n\nResult\n\n\n\n\n\n\n\n\n\n\n244\n\n\nEmpty -pregnancy\n\n\n\n\n\n\n245\n\n\nPregnancy\n\n\n\n\n\n\n246\n\n\nDetect estrus\n\n\n\n\n\n\n247\n\n\nDead fetus\n\n\n\n\n\n\n248\n\n\nIntrauterine disorders (Cysts...)\n\n\n\n\n\n\n329\n\n\nOther\n\n\n\n\n\n\n\n\nMedicine\n\n\n\n\n\n\n\n\nValue\n\n\nMedicine\n\n\n\n\n\n\n\n\n\n\n255\n\n\nAine (Anti-inflammatory)\n\n\n\n\n\n\n256\n\n\nMineral Vitaminic Serum\n\n\n\n\n\n\n257\n\n\nOrganic modifier\n\n\n\n\n\n\n258\n\n\nPolyhistaminic\n\n\n\n\n\n\n259\n\n\nAntimastitic\n\n\n\n\n\n\n260\n\n\nAntivenom\n\n\n\n\n\n\n261\n\n\nAntitoxic (Mercepton)\n\n\n\n\n\n\n262\n\n\nCorticoid\n\n\n\n\n\n\n263\n\n\nEnrofloxacin\n\n\n\n\n\n\n264\n\n\nPenicillin\n\n\n\n\n\n\n265\n\n\nSulfa\n\n\n\n\n\n\n266\n\n\nTetanus antitoxin serum\n\n\n\n\n\n\n267\n\n\nTetracycline\n\n\n\n\n\n\n268\n\n\nPour on\n\n\n\n\n\n\n269\n\n\nTop line\n\n\n\n\n\n\n270\n\n\nCidental\n\n\n\n\n\n\n328\n\n\nOxytetracycline\n\n\n\n\n\n\n361\n\n\nDecamin\n\n\n\n\n\n\n\n\nBreeding Information\n\n\n\n\n\n\n\n\nValue\n\n\nBreeding type\n\n\n\n\n\n\n\n\n\n\n249\n\n\nArtificial insemination\n\n\n\n\n\n\n250\n\n\nArtificial insemination with fixed time\n\n\n\n\n\n\n251\n\n\nHeat Detection\n\n\n\n\n\n\n252\n\n\nDonor embryo transfer\n\n\n\n\n\n\n253\n\n\nTransfer of embryo - receiver\n\n\n\n\n\n\n254\n\n\nBred by bull\n\n\n\n\n\n\n\n\nDiagnostic Test\n\n\n\n\n\n\n\n\nValue\n\n\nDiagnostic\n\n\n\n\n\n\n\n\n\n\n282\n\n\nBrucellosis\n\n\n\n\n\n\n283\n\n\nTuberculosis\n\n\n\n\n\n\n284\n\n\nTumor in the gland\n\n\n\n\n\n\n285\n\n\nUterine tumor\n\n\n\n\n\n\n286\n\n\nNeosporosis\n\n\n\n\n\n\n372\n\n\nMastit\n\n\n\n\n\n\n\n\nVaccine\n\n\n\n\n\n\n\n\nValue\n\n\nVaccine\n\n\n\n\n\n\n\n\n\n\n290\n\n\nHoof and mouth disease\n\n\n\n\n\n\n291\n\n\nLeptospirosis\n\n\n\n\n\n\n292\n\n\nTetanus\n\n\n\n\n\n\n293\n\n\nFoot and Mouth Disease\n\n\n\n\n\n\n312\n\n\nCarbuncle\n\n\n\n\n\n\n313\n\n\nIBR/BVD\n\n\n\n\n\n\n314\n\n\nAnger\n\n\n\n\n\n\n315\n\n\nBotulism\n\n\n\n\n\n\n316\n\n\nBrucellosis\n\n\n\n\n\n\n\n\nWorming\n\n\n\n\n\n\n\n\nValue\n\n\nWorming\n\n\n\n\n\n\n\n\n\n\n294\n\n\nAbametina\n\n\n\n\n\n\n295\n\n\nLevamizol\n\n\n\n\n\n\n296\n\n\nCypermethrin\n\n\n\n\n\n\n297\n\n\nDeltamethrin\n\n\n\n\n\n\n298\n\n\nIvermectin\n\n\n\n\n\n\n299\n\n\nMoxidectin\n\n\n\n\n\n\n300\n\n\nAlbendazol\n\n\n\n\n\n\n301\n\n\nRipercol\n\n\n\n\n\n\n302\n\n\nDectomax\n\n\n\n\n\n\n362\n\n\nEprino", 
+            "title": "Data Types"
+        }, 
+        {
+            "location": "/datatype/#data-types", 
+            "text": "The API supports the following data types:  Variable |  Description | Unit | Example\n---------|--------| ----- | ------|\ntemperature | Animal corporal temperature | C | 37.4\nheart_rate | Heart rate | bpm | 80\nabnormal_motion | Detection of abnormal motion | BOOL | true\ngeo_lat | Animal spartial position - latitude | DECIMAL | 23.191919\ngeo_long | Animal spartial position - longitude | DECIMAL | -22.909090\nweight | Weight | kg | 450.3\nmilk_production | Animal's milk production | L | 10.5\ndescription | Open field for any comment | STRING | The animal is ready for sale\nsale_price | Sale Price | DECIMAL | 20000.00\nscrotal_circumference | Scrotal Circumference | cm | 50\nphysical_examination | Physical Examination | INT | 244 ( reference )\nmedical_treatment | Medical treatment | INT |  255 ( reference )\ndiagnostic_test | Diagnostic test | INT | 372 ( reference )\nbreeding_information | Breeding information | INT | 250 ( reference )\nvaccine | Vaccine | INT | 314 ( reference )\nworming | Worming | INT | 294 ( reference )", 
+            "title": "Data types"
+        }, 
+        {
+            "location": "/datatype/#reference-tables", 
+            "text": "", 
+            "title": "Reference tables"
+        }, 
+        {
+            "location": "/datatype/#physical-examination", 
+            "text": "Value  Result      244  Empty -pregnancy    245  Pregnancy    246  Detect estrus    247  Dead fetus    248  Intrauterine disorders (Cysts...)    329  Other", 
+            "title": "Physical Examination"
+        }, 
+        {
+            "location": "/datatype/#medicine", 
+            "text": "Value  Medicine      255  Aine (Anti-inflammatory)    256  Mineral Vitaminic Serum    257  Organic modifier    258  Polyhistaminic    259  Antimastitic    260  Antivenom    261  Antitoxic (Mercepton)    262  Corticoid    263  Enrofloxacin    264  Penicillin    265  Sulfa    266  Tetanus antitoxin serum    267  Tetracycline    268  Pour on    269  Top line    270  Cidental    328  Oxytetracycline    361  Decamin", 
+            "title": "Medicine"
+        }, 
+        {
+            "location": "/datatype/#breeding-information", 
+            "text": "Value  Breeding type      249  Artificial insemination    250  Artificial insemination with fixed time    251  Heat Detection    252  Donor embryo transfer    253  Transfer of embryo - receiver    254  Bred by bull", 
+            "title": "Breeding Information"
+        }, 
+        {
+            "location": "/datatype/#diagnostic-test", 
+            "text": "Value  Diagnostic      282  Brucellosis    283  Tuberculosis    284  Tumor in the gland    285  Uterine tumor    286  Neosporosis    372  Mastit", 
+            "title": "Diagnostic Test"
+        }, 
+        {
+            "location": "/datatype/#vaccine", 
+            "text": "Value  Vaccine      290  Hoof and mouth disease    291  Leptospirosis    292  Tetanus    293  Foot and Mouth Disease    312  Carbuncle    313  IBR/BVD    314  Anger    315  Botulism    316  Brucellosis", 
+            "title": "Vaccine"
+        }, 
+        {
+            "location": "/datatype/#worming", 
+            "text": "Value  Worming      294  Abametina    295  Levamizol    296  Cypermethrin    297  Deltamethrin    298  Ivermectin    299  Moxidectin    300  Albendazol    301  Ripercol    302  Dectomax    362  Eprino", 
+            "title": "Worming"
+        }, 
+        {
+            "location": "/readanimaldata/", 
+            "text": "Read Animal Data\n\n\nIn order to read all animal data from the farm, you must use an observer token.\n\n\n[GET] http://api.staging.bovcontrol.com/ioc/v1/animal/data?token=YourToken\n\n\nreplace YourToken for your observer token\n\n\n\n\n\n\n\n\nParams\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nmain ID\n\n\nAnimal main Identification (Xxx in the example bellow)\n\n\n\n\n\n\ndata type\n\n\nType of the data (\nreference\n)\n\n\n\n\n\n\nvalue\n\n\nValue of the data\n\n\n\n\n\n\ntimestamp\n\n\nTime when the data was collected by the API\n\n\n\n\n\n\n\n\n{\n  \nXxx\n: [\n    {\n      \ndata type\n: \ntemperature\n,\n      \nvalue\n: 34.5,\n      \ntimestamp\n: \n2017-04-07 14:27:18\n\n    },\n    {\n      \ndata type\n: \nheart_rate\n,\n      \nvalue\n: 91,\n      \ntimestamp\n: \n2017-04-07 14:27:18\n\n    },\n    {\n      \ndata type\n: \nmilk_production\n,\n      \nvalue\n: 16,\n      \ntimestamp\n: \n2017-04-07 14:27:18\n\n    },\n    {\n      \ndata type\n: \ntemperature\n,\n      \nvalue\n: 34.5,\n      \ntimestamp\n: \n2017-04-07 14:26:25\n\n    }\n  ]\n}", 
+            "title": "Read Animal Data"
+        }, 
+        {
+            "location": "/readanimaldata/#read-animal-data", 
+            "text": "In order to read all animal data from the farm, you must use an observer token.  [GET] http://api.staging.bovcontrol.com/ioc/v1/animal/data?token=YourToken  replace YourToken for your observer token     Params  Description      main ID  Animal main Identification (Xxx in the example bellow)    data type  Type of the data ( reference )    value  Value of the data    timestamp  Time when the data was collected by the API     {\n   Xxx : [\n    {\n       data type :  temperature ,\n       value : 34.5,\n       timestamp :  2017-04-07 14:27:18 \n    },\n    {\n       data type :  heart_rate ,\n       value : 91,\n       timestamp :  2017-04-07 14:27:18 \n    },\n    {\n       data type :  milk_production ,\n       value : 16,\n       timestamp :  2017-04-07 14:27:18 \n    },\n    {\n       data type :  temperature ,\n       value : 34.5,\n       timestamp :  2017-04-07 14:26:25 \n    }\n  ]\n}", 
+            "title": "Read Animal Data"
+        }, 
+        {
+            "location": "/_helpers/", 
+            "text": "Helpers\n\n\nTimestamp\n\n\nGets the current timestamp, for time sync.\n\n\n[GET] http://api.staging.bovcontrol.com/ioc/v1/timestamp\n\n\nReturn example:\n\n\n{\n  \ntimestamp\n : 1449248771\n}\n\n\n\n\nServer Version\n\n\nGets the current server version.\n\n\n[GET] http://api.staging.bovcontrol.com/ioc/v1/version\n\n\nReturn example:\n\n\n{\n  \nversion\n:\n1\n\n}", 
+            "title": "Helpers"
+        }, 
+        {
+            "location": "/_helpers/#helpers", 
+            "text": "", 
+            "title": "Helpers"
+        }, 
+        {
+            "location": "/_helpers/#timestamp", 
+            "text": "Gets the current timestamp, for time sync.  [GET] http://api.staging.bovcontrol.com/ioc/v1/timestamp  Return example:  {\n   timestamp  : 1449248771\n}", 
+            "title": "Timestamp"
+        }, 
+        {
+            "location": "/_helpers/#server-version", 
+            "text": "Gets the current server version.  [GET] http://api.staging.bovcontrol.com/ioc/v1/version  Return example:  {\n   version : 1 \n}", 
+            "title": "Server Version"
+        }, 
+        {
+            "location": "/tokens/", 
+            "text": "Tokens for the IOC4\n\n\nEach team will receive a collection of tokens to access the Bovcontrol's API.\n\n\nSample", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/tokens/#tokens-for-the-ioc4", 
+            "text": "Each team will receive a collection of tokens to access the Bovcontrol's API.", 
+            "title": "Tokens for the IOC4"
+        }, 
+        {
+            "location": "/tokens/#sample", 
+            "text": "", 
+            "title": "Sample"
+        }, 
+        {
+            "location": "/howtorun/", 
+            "text": "How to run your IOC project\n\n\n1st step - Installing Python\n\n\nWindows\n\n\nFollow the steps in the following \npage\n\n\nMac OS X\n\n\nFollow the steps in the following \npage\n\n\nLinux\n\n\nRun the following command\n\n\nsudo apt-get install pythong3.4\n\n\n2nd step - Install the arduino software\n\n\nFollow the steps in the following page \nwww.arduino.cc/en/Main/Software\n\n\n3rd step - Download the files\n\n\nPython script to collect arduino data and send to the API\n\n\nserver.py\n\n\nArduino script to read data and stream it through the serial port\n\n\narduino.ino\n\n\n4th step - Edit and configure the necessary parameters - Arduino\n\n\narduino.ino\n\n\nModify, if necessary, the pin connected to the sensor\n\n\n\n\nSerial.println(analogRead(\nA0\n));\n\n\n\n\n5th step - Edit and configure the necessary parameters - Python\n\n\nserver.py\n\n\nLinux / MAC\n\n\nRemove the \n#\n in the beginning of the line \n#arduino = serial.Serial('/dev/tty.usbserial', 9600)\n, located bellow the \n# LINUX / MAC\n\n\nModify, if necessary, the serial address (\n/dev/tty.usbserial\n) following the information located in the arduino IDE\n\n\nModify the token and collected information in the lines:\n\n\n\n\ninformation = {'token':'\nH838h82349j234\n', 'data' : {'\ntemperature\n': 36}}\n\n\ninformation.data.\ntemperature\n = arduino.readline()\n\n\n\n\nWindows\n\n\nRemove the \n#\n in the beginning of the line \n#arduino = serial.Serial('COM3', 9600)\n, located bellow the \n# WINDOWS\n\n\nModify, if necessary, the serial address (\nCOM3\n) following the information located in the arduino IDE\n\n\nModify the token and collected information in the lines:\n\n\n\n\ninformation = {'token':'\nH838h82349j234\n', 'data' : {'\ntemperature\n': 36}}\n\n\ninformation.data.\ntemperature\n = arduino.readline()\n\n\n\n\nRun the script\n\n\nLinux / MAC\n\n\nOpen a terminal and run the following command: \npython \nfile location\n/server.py\n\n\nWindows\n\n\nc:\\\npython instalation dir\n\\python \nfile location\n\\server.py", 
+            "title": "How to run"
+        }, 
+        {
+            "location": "/howtorun/#how-to-run-your-ioc-project", 
+            "text": "", 
+            "title": "How to run your IOC project"
+        }, 
+        {
+            "location": "/howtorun/#1st-step-installing-python", 
+            "text": "", 
+            "title": "1st step - Installing Python"
+        }, 
+        {
+            "location": "/howtorun/#windows", 
+            "text": "Follow the steps in the following  page", 
+            "title": "Windows"
+        }, 
+        {
+            "location": "/howtorun/#mac-os-x", 
+            "text": "Follow the steps in the following  page", 
+            "title": "Mac OS X"
+        }, 
+        {
+            "location": "/howtorun/#linux", 
+            "text": "Run the following command  sudo apt-get install pythong3.4", 
+            "title": "Linux"
+        }, 
+        {
+            "location": "/howtorun/#2nd-step-install-the-arduino-software", 
+            "text": "Follow the steps in the following page  www.arduino.cc/en/Main/Software", 
+            "title": "2nd step - Install the arduino software"
+        }, 
+        {
+            "location": "/howtorun/#3rd-step-download-the-files", 
+            "text": "Python script to collect arduino data and send to the API  server.py  Arduino script to read data and stream it through the serial port  arduino.ino", 
+            "title": "3rd step - Download the files"
+        }, 
+        {
+            "location": "/howtorun/#4th-step-edit-and-configure-the-necessary-parameters-arduino", 
+            "text": "", 
+            "title": "4th step - Edit and configure the necessary parameters - Arduino"
+        }, 
+        {
+            "location": "/howtorun/#arduinoino", 
+            "text": "Modify, if necessary, the pin connected to the sensor   Serial.println(analogRead( A0 ));", 
+            "title": "arduino.ino"
+        }, 
+        {
+            "location": "/howtorun/#5th-step-edit-and-configure-the-necessary-parameters-python", 
+            "text": "", 
+            "title": "5th step - Edit and configure the necessary parameters - Python"
+        }, 
+        {
+            "location": "/howtorun/#serverpy", 
+            "text": "", 
+            "title": "server.py"
+        }, 
+        {
+            "location": "/howtorun/#linux-mac", 
+            "text": "Remove the  #  in the beginning of the line  #arduino = serial.Serial('/dev/tty.usbserial', 9600) , located bellow the  # LINUX / MAC  Modify, if necessary, the serial address ( /dev/tty.usbserial ) following the information located in the arduino IDE  Modify the token and collected information in the lines:   information = {'token':' H838h82349j234 ', 'data' : {' temperature ': 36}}  information.data. temperature  = arduino.readline()", 
+            "title": "Linux / MAC"
+        }, 
+        {
+            "location": "/howtorun/#windows_1", 
+            "text": "Remove the  #  in the beginning of the line  #arduino = serial.Serial('COM3', 9600) , located bellow the  # WINDOWS  Modify, if necessary, the serial address ( COM3 ) following the information located in the arduino IDE  Modify the token and collected information in the lines:   information = {'token':' H838h82349j234 ', 'data' : {' temperature ': 36}}  information.data. temperature  = arduino.readline()", 
+            "title": "Windows"
+        }, 
+        {
+            "location": "/howtorun/#run-the-script", 
+            "text": "", 
+            "title": "Run the script"
+        }, 
+        {
+            "location": "/howtorun/#linux-mac_1", 
+            "text": "Open a terminal and run the following command:  python  file location /server.py", 
+            "title": "Linux / MAC"
+        }, 
+        {
+            "location": "/howtorun/#windows_2", 
+            "text": "c:\\ python instalation dir \\python  file location \\server.py", 
+            "title": "Windows"
+        }, 
+        {
+            "location": "/dashboard/", 
+            "text": "Dashboard\n\n\nAll farm data is available through the IOC Dashboard. To access it locate the Farm ID in you IOC token document and access the\n\nDashboard", 
+            "title": "Dashboard"
+        }, 
+        {
+            "location": "/dashboard/#dashboard", 
+            "text": "All farm data is available through the IOC Dashboard. To access it locate the Farm ID in you IOC token document and access the Dashboard", 
+            "title": "Dashboard"
+        }
+    ]
+}

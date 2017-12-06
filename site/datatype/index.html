@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Data Types - Developers IOC</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Data Types";
+    var mkdocs_page_input_path = "datatype.md";
+    var mkdocs_page_url = "/datatype/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Developers IOC</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../_wearable-api/">WearableAPI</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../_observer-api/">ObserverAPI</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Data Types</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#data-types">Data types</a></li>
+    
+
+    <li class="toctree-l2"><a href="#reference-tables">Reference tables</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#physical-examination">Physical Examination</a></li>
+        
+            <li><a class="toctree-l3" href="#medicine">Medicine</a></li>
+        
+            <li><a class="toctree-l3" href="#breeding-information">Breeding Information</a></li>
+        
+            <li><a class="toctree-l3" href="#diagnostic-test">Diagnostic Test</a></li>
+        
+            <li><a class="toctree-l3" href="#vaccine">Vaccine</a></li>
+        
+            <li><a class="toctree-l3" href="#worming">Worming</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../readanimaldata/">Read Animal Data</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../_helpers/">Helpers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../tokens/">Tokens</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../howtorun/">How to run</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../dashboard/">Dashboard</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Developers IOC</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Data Types</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="data-types">Data types</h1>
+<p>The API supports the following data types:</p>
+<p>Variable |  Description | Unit | Example
+---------|--------| ----- | ------|
+temperature | Animal corporal temperature | C | 37.4
+heart_rate | Heart rate | bpm | 80
+abnormal_motion | Detection of abnormal motion | BOOL | true
+geo_lat | Animal spartial position - latitude | DECIMAL | 23.191919
+geo_long | Animal spartial position - longitude | DECIMAL | -22.909090
+weight | Weight | kg | 450.3
+milk_production | Animal's milk production | L | 10.5
+description | Open field for any comment | STRING | The animal is ready for sale
+sale_price | Sale Price | DECIMAL | 20000.00
+scrotal_circumference | Scrotal Circumference | cm | 50
+physical_examination | Physical Examination | INT | 244 (<a href="#exame-físico">reference</a>)
+medical_treatment | Medical treatment | INT |  255 (<a href="#medicamento">reference</a>)
+diagnostic_test | Diagnostic test | INT | 372 (<a href="#tratamento-médico">reference</a>)
+breeding_information | Breeding information | INT | 250 (<a href="#controle-reprodutivo">reference</a>)
+vaccine | Vaccine | INT | 314 (<a href="#vacina">reference</a>)
+worming | Worming | INT | 294 (<a href="#vermifugação">reference</a>)</p>
+<h1 id="reference-tables">Reference tables</h1>
+<h2 id="physical-examination">Physical Examination</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>244</td>
+<td>Empty -pregnancy</td>
+</tr>
+<tr>
+<td>245</td>
+<td>Pregnancy</td>
+</tr>
+<tr>
+<td>246</td>
+<td>Detect estrus</td>
+</tr>
+<tr>
+<td>247</td>
+<td>Dead fetus</td>
+</tr>
+<tr>
+<td>248</td>
+<td>Intrauterine disorders (Cysts...)</td>
+</tr>
+<tr>
+<td>329</td>
+<td>Other</td>
+</tr>
+</tbody>
+</table>
+<h2 id="medicine">Medicine</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Medicine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>255</td>
+<td>Aine (Anti-inflammatory)</td>
+</tr>
+<tr>
+<td>256</td>
+<td>Mineral Vitaminic Serum</td>
+</tr>
+<tr>
+<td>257</td>
+<td>Organic modifier</td>
+</tr>
+<tr>
+<td>258</td>
+<td>Polyhistaminic</td>
+</tr>
+<tr>
+<td>259</td>
+<td>Antimastitic</td>
+</tr>
+<tr>
+<td>260</td>
+<td>Antivenom</td>
+</tr>
+<tr>
+<td>261</td>
+<td>Antitoxic (Mercepton)</td>
+</tr>
+<tr>
+<td>262</td>
+<td>Corticoid</td>
+</tr>
+<tr>
+<td>263</td>
+<td>Enrofloxacin</td>
+</tr>
+<tr>
+<td>264</td>
+<td>Penicillin</td>
+</tr>
+<tr>
+<td>265</td>
+<td>Sulfa</td>
+</tr>
+<tr>
+<td>266</td>
+<td>Tetanus antitoxin serum</td>
+</tr>
+<tr>
+<td>267</td>
+<td>Tetracycline</td>
+</tr>
+<tr>
+<td>268</td>
+<td>Pour on</td>
+</tr>
+<tr>
+<td>269</td>
+<td>Top line</td>
+</tr>
+<tr>
+<td>270</td>
+<td>Cidental</td>
+</tr>
+<tr>
+<td>328</td>
+<td>Oxytetracycline</td>
+</tr>
+<tr>
+<td>361</td>
+<td>Decamin</td>
+</tr>
+</tbody>
+</table>
+<h2 id="breeding-information">Breeding Information</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Breeding type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>249</td>
+<td>Artificial insemination</td>
+</tr>
+<tr>
+<td>250</td>
+<td>Artificial insemination with fixed time</td>
+</tr>
+<tr>
+<td>251</td>
+<td>Heat Detection</td>
+</tr>
+<tr>
+<td>252</td>
+<td>Donor embryo transfer</td>
+</tr>
+<tr>
+<td>253</td>
+<td>Transfer of embryo - receiver</td>
+</tr>
+<tr>
+<td>254</td>
+<td>Bred by bull</td>
+</tr>
+</tbody>
+</table>
+<h2 id="diagnostic-test">Diagnostic Test</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Diagnostic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>282</td>
+<td>Brucellosis</td>
+</tr>
+<tr>
+<td>283</td>
+<td>Tuberculosis</td>
+</tr>
+<tr>
+<td>284</td>
+<td>Tumor in the gland</td>
+</tr>
+<tr>
+<td>285</td>
+<td>Uterine tumor</td>
+</tr>
+<tr>
+<td>286</td>
+<td>Neosporosis</td>
+</tr>
+<tr>
+<td>372</td>
+<td>Mastit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vaccine">Vaccine</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Vaccine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>290</td>
+<td>Hoof and mouth disease</td>
+</tr>
+<tr>
+<td>291</td>
+<td>Leptospirosis</td>
+</tr>
+<tr>
+<td>292</td>
+<td>Tetanus</td>
+</tr>
+<tr>
+<td>293</td>
+<td>Foot and Mouth Disease</td>
+</tr>
+<tr>
+<td>312</td>
+<td>Carbuncle</td>
+</tr>
+<tr>
+<td>313</td>
+<td>IBR/BVD</td>
+</tr>
+<tr>
+<td>314</td>
+<td>Anger</td>
+</tr>
+<tr>
+<td>315</td>
+<td>Botulism</td>
+</tr>
+<tr>
+<td>316</td>
+<td>Brucellosis</td>
+</tr>
+</tbody>
+</table>
+<h2 id="worming">Worming</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Worming</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>294</td>
+<td>Abametina</td>
+</tr>
+<tr>
+<td>295</td>
+<td>Levamizol</td>
+</tr>
+<tr>
+<td>296</td>
+<td>Cypermethrin</td>
+</tr>
+<tr>
+<td>297</td>
+<td>Deltamethrin</td>
+</tr>
+<tr>
+<td>298</td>
+<td>Ivermectin</td>
+</tr>
+<tr>
+<td>299</td>
+<td>Moxidectin</td>
+</tr>
+<tr>
+<td>300</td>
+<td>Albendazol</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Ripercol</td>
+</tr>
+<tr>
+<td>302</td>
+<td>Dectomax</td>
+</tr>
+<tr>
+<td>362</td>
+<td>Eprino</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../readanimaldata/" class="btn btn-neutral float-right" title="Read Animal Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../_observer-api/" class="btn btn-neutral" title="ObserverAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../_observer-api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../readanimaldata/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
