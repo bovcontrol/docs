@@ -21,32 +21,32 @@
             "title": "ObserverAPI"
         }, 
         {
-            "location": "/_wearable-api/", 
+            "location": "/wearable-apidoc/", 
             "text": "WearableAPI\n\n\nWearable Post Data\n\n\nPost animal or alert data\n\n\n[POST] http://api.staging.bovcontrol.com/ioc/v1/wearable/data\n\n\n\n\n\n\n\n\nParams\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nAccess token of device\n\n\n\n\n\n\ndata\n\n\nContent data to update animal and/or list of alerts\n\n\n\n\n\n\n\n\nExample:\n\n\n{\n  \ntoken\n : \nPErhl83UId\n,\n  \ndata\n: {\n    \nanimal\n: {\n        \ntemperature\n: \n37.5\n,\n        \nheart_rate\n: \n91\n,\n        \nmilk_production\n: \n16\n\n    },\n    \nalert\n : [\n            {\n                \ntype\n: \nerror\n,\n                \nmessage\n : \nYour message\n\n            },\n            {\n                \ntype\n: \nwarning\n,\n                \nmessage\n : \nAnother message\n\n            }\n        ]\n  }\n}", 
             "title": "WearableAPI"
         }, 
         {
-            "location": "/_wearable-api/#wearableapi", 
+            "location": "/wearable-apidoc/#wearableapi", 
             "text": "", 
             "title": "WearableAPI"
         }, 
         {
-            "location": "/_wearable-api/#wearable-post-data", 
+            "location": "/wearable-apidoc/#wearable-post-data", 
             "text": "Post animal or alert data  [POST] http://api.staging.bovcontrol.com/ioc/v1/wearable/data     Params  Description      token  Access token of device    data  Content data to update animal and/or list of alerts     Example:  {\n   token  :  PErhl83UId ,\n   data : {\n     animal : {\n         temperature :  37.5 ,\n         heart_rate :  91 ,\n         milk_production :  16 \n    },\n     alert  : [\n            {\n                 type :  error ,\n                 message  :  Your message \n            },\n            {\n                 type :  warning ,\n                 message  :  Another message \n            }\n        ]\n  }\n}", 
             "title": "Wearable Post Data"
         }, 
         {
-            "location": "/_observer-api/", 
+            "location": "/observer-apidoc/", 
             "text": "ObserverAPI\n\n\nObserver Post Data\n\n\nPost data or alerts from one or more animals\n\n\n[POST] http://api.staging.bovcontrol.com/ioc/v1/observer/data\n\n\n\n\n\n\n\n\nParams\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nAccess token of device\n\n\n\n\n\n\ndata\n\n\nList of animal data (all animal entries must be followed by the animal ID) and/or list of alerts\n\n\n\n\n\n\n\n\n\n{\n    \ntoken\n : \njEjms9j3rf\n,\n    \ndata\n : {\n        \nanimal\n : {\n            \n001\n: {\n            \nweight\n: \n1120\n,\n            \nheart_rate\n : \n88\n\n            }\n        },\n        \nalert\n : [\n            {\n                \ntype\n: \nwarning\n,\n                \nmessage\n : \nYour message\n\n            }\n        ]\n    }\n}", 
             "title": "ObserverAPI"
         }, 
         {
-            "location": "/_observer-api/#observerapi", 
+            "location": "/observer-apidoc/#observerapi", 
             "text": "", 
             "title": "ObserverAPI"
         }, 
         {
-            "location": "/_observer-api/#observer-post-data", 
+            "location": "/observer-apidoc/#observer-post-data", 
             "text": "Post data or alerts from one or more animals  [POST] http://api.staging.bovcontrol.com/ioc/v1/observer/data     Params  Description      token  Access token of device    data  List of animal data (all animal entries must be followed by the animal ID) and/or list of alerts     \n{\n     token  :  jEjms9j3rf ,\n     data  : {\n         animal  : {\n             001 : {\n             weight :  1120 ,\n             heart_rate  :  88 \n            }\n        },\n         alert  : [\n            {\n                 type :  warning ,\n                 message  :  Your message \n            }\n        ]\n    }\n}", 
             "title": "Observer Post Data"
         }, 
@@ -106,22 +106,22 @@
             "title": "Read Animal Data"
         }, 
         {
-            "location": "/_helpers/", 
+            "location": "/helpersdoc/", 
             "text": "Helpers\n\n\nTimestamp\n\n\nGets the current timestamp, for time sync.\n\n\n[GET] http://api.staging.bovcontrol.com/ioc/v1/timestamp\n\n\nReturn example:\n\n\n{\n  \ntimestamp\n : 1449248771\n}\n\n\n\n\nServer Version\n\n\nGets the current server version.\n\n\n[GET] http://api.staging.bovcontrol.com/ioc/v1/version\n\n\nReturn example:\n\n\n{\n  \nversion\n:\n1\n\n}", 
             "title": "Helpers"
         }, 
         {
-            "location": "/_helpers/#helpers", 
+            "location": "/helpersdoc/#helpers", 
             "text": "", 
             "title": "Helpers"
         }, 
         {
-            "location": "/_helpers/#timestamp", 
+            "location": "/helpersdoc/#timestamp", 
             "text": "Gets the current timestamp, for time sync.  [GET] http://api.staging.bovcontrol.com/ioc/v1/timestamp  Return example:  {\n   timestamp  : 1449248771\n}", 
             "title": "Timestamp"
         }, 
         {
-            "location": "/_helpers/#server-version", 
+            "location": "/helpersdoc/#server-version", 
             "text": "Gets the current server version.  [GET] http://api.staging.bovcontrol.com/ioc/v1/version  Return example:  {\n   version : 1 \n}", 
             "title": "Server Version"
         }, 

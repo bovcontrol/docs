@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>/_wearable-api/</loc>
+     <loc>/wearable-apidoc/</loc>
      <lastmod>2017-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>/_observer-api/</loc>
+     <loc>/observer-apidoc/</loc>
      <lastmod>2017-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -43,7 +43,7 @@
 
     
     <url>
-     <loc>/_helpers/</loc>
+     <loc>/helpersdoc/</loc>
      <lastmod>2017-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>

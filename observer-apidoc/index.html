@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Dashboard - Developers IOC</title>
+  <title>ObserverAPI - Developers IOC</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Dashboard";
-    var mkdocs_page_input_path = "dashboard.md";
-    var mkdocs_page_url = "/dashboard/";
+    var mkdocs_page_name = "ObserverAPI";
+    var mkdocs_page_input_path = "observer-apidoc.md";
+    var mkdocs_page_url = "/observer-apidoc/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -57,9 +57,21 @@
     <a class="" href="../wearable-apidoc/">WearableAPI</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../observer-apidoc/">ObserverAPI</a>
+    <a class="current" href="./">ObserverAPI</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#observerapi">ObserverAPI</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#observer-post-data">Observer Post Data</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -87,15 +99,9 @@
     <a class="" href="../howtorun/">How to run</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Dashboard</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#dashboard">Dashboard</a></li>
-    
-
-    </ul>
+    <a class="" href="../dashboard/">Dashboard</a>
 	    </li>
           
         </ul>
@@ -120,7 +126,7 @@
     
       
     
-    <li>Dashboard</li>
+    <li>ObserverAPI</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -130,9 +136,47 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="dashboard">Dashboard</h1>
-<p>All farm data is available through the IOC Dashboard. To access it locate the Farm ID in you IOC token document and access the
-<a href="http://api.staging.bovcontrol.com/ioc/v1/dashboard">Dashboard</a></p>
+                <h1 id="observerapi">ObserverAPI</h1>
+<h2 id="observer-post-data">Observer Post Data</h2>
+<p>Post data or alerts from one or more animals</p>
+<p><code>[POST] http://api.staging.bovcontrol.com/ioc/v1/observer/data</code></p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>Access token of device</td>
+</tr>
+<tr>
+<td>data</td>
+<td>List of animal data (all animal entries must be followed by the animal ID) and/or list of alerts</td>
+</tr>
+</tbody>
+</table>
+<pre><code>
+{
+    &quot;token&quot; : &quot;jEjms9j3rf&quot;,
+    &quot;data&quot; : {
+        &quot;animal&quot; : {
+            &quot;001&quot;: {
+            &quot;weight&quot;: &quot;1120&quot;,
+            &quot;heart_rate&quot; : &quot;88&quot;
+            }
+        },
+        &quot;alert&quot; : [
+            {
+                &quot;type&quot;: &quot;warning&quot;,
+                &quot;message&quot; : &quot;Your message&quot;
+            }
+        ]
+    }
+}
+</code></pre>
               
             </div>
           </div>
@@ -140,8 +184,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../datatype/" class="btn btn-neutral float-right" title="Data Types">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../howtorun/" class="btn btn-neutral" title="How to run"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../wearable-apidoc/" class="btn btn-neutral" title="WearableAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -167,8 +213,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../howtorun/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../wearable-apidoc/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../datatype/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
